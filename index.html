@@ -1,127 +1,515 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fateh Carrier INC</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-image: url('https://images.unsplash.com/photo-1601584102910-feaf09865c1a?q=80&w=1000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 120px 0;
-            text-align: center;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
-        }
-        header h1 {
-            font-size: 55px;
-            margin: 0;
-        }
-        header p {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-        nav {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #ff4500;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 30px;
-            background: #fff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        h2 {
-            color: #ff4500;
-            border-bottom: 2px solid #ff4500;
-            padding-bottom: 10px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-        .footer {
-            background-color: #1a1a1a;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fateh Carrier INC trucking and freight transportation services. MC 1807864, USDOT 4551871.">
+  <title>Fateh Carrier INC | Trucking &amp; Logistics</title>
+
+  <style>
+    :root {
+      --navy: #102b46;
+      --blue: #1769aa;
+      --gold: #f2b544;
+      --light: #f3f6fa;
+      --text: #263445;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    a { color: var(--blue); }
+
+    .topbar {
+      background: #071827;
+      color: white;
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .topbar a { color: white; }
+
+    header {
+      padding: 16px 5%;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--navy);
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      padding: 80px 6%;
+      color: white;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 22, 39, 0.92),
+          rgba(5, 22, 39, 0.55)
+        ),
+        url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=2000&q=85")
+        center / cover no-repeat;
+    }
+
+    .hero-content { max-width: 800px; }
+
+    .eyebrow {
+      color: var(--gold);
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.1;
+      margin: 15px 0;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 680px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 12px 10px 0 0;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: #17283a;
+    }
+
+    .button-outline {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .stats {
+      background: var(--navy);
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      gap: 20px;
+      padding: 25px 5%;
+    }
+
+    .stats strong {
+      display: block;
+      color: var(--gold);
+      font-size: 23px;
+    }
+
+    .stats span { font-size: 13px; }
+
+    section { padding: 65px 6%; }
+
+    .container {
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      margin: 10px 0 20px;
+    }
+
+    .intro {
+      max-width: 800px;
+      color: #596778;
+      font-size: 17px;
+    }
+
+    .light { background: var(--light); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border: 1px solid #e0e7ef;
+      border-radius: 10px;
+    }
+
+    .card h3 { color: var(--navy); }
+
+    .details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .details-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .details-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #dce4ed;
+      overflow-wrap: anywhere;
+    }
+
+    .details-list strong {
+      display: inline-block;
+      min-width: 140px;
+      color: var(--navy);
+    }
+
+    .contact-box {
+      background: var(--navy);
+      color: white;
+      border-radius: 12px;
+      padding: 28px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-box h3 { margin-top: 0; }
+
+    .contact-box a { color: white; }
+
+    .sms-note {
+      border-top: 1px solid #ffffff55;
+      margin-top: 20px;
+      padding-top: 18px;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #071827;
+      color: white;
+      padding: 30px 6%;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer a { color: white; }
+
+    .small {
+      color: #c5d2df;
+      font-size: 13px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 760px) {
+      .cards, .details, .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stats { text-align: left; }
+      .hero { min-height: 500px; }
+      .details-list strong { min-width: 125px; }
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Fateh Carrier INC</h1>
-        <p>Reliable Trucking & Logistics Services Across North America</p>
-    </header>
+  <div class="topbar">
+    <span>Fateh Carrier INC | Trucking &amp; Freight Transportation</span>
+    <span>Call: <a href="tel:+19294002187">929-400-2187</a></span>
+  </div>
+
+  <header>
+    <a class="brand" href="#home">FATEH CARRIER INC</a>
 
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#details">Company Details</a>
-        <a href="#contact">Contact Us</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#company">Company Details</a>
+      <a href="#contact">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="sms-terms.html">SMS Terms</a>
     </nav>
+  </header>
 
-    <div class="container">
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Welcome to Fateh Carrier INC. We provide top-notch freight management, transportation, and logistics solutions to ensure your goods reach their destination safely and on time.</p>
-        </section>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Reliable Transportation Partner</div>
 
-        <section id="details">
-            <h2>Company Details</h2>
-            <ul>
-                <li><strong>Owner:</strong> Satnam Singh</li>
-                <li><strong>MC Number:</strong> 1807864</li>
-                <li><strong>DOT Number:</strong> 4551871</li>
-            </ul>
-        </section>
+        <h1>Dependable Trucking.<br>Business Built on Trust.</h1>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p><strong>Address:</strong> 24 Koster BLVD APT 8A, Edison, NJ, 08837</p>
-            <p><strong>Phone:</strong> <a href="tel:9294002187">929-400-2187</a></p>
-            <p><strong>Emails:</strong><br>
-               - <a href="mailto:fatehcarrier11@gmail.com">fatehcarrier11@gmail.com</a><br>
-               - <a href="mailto:satnam@fatehcarrierinc.com">satnam@fatehcarrierinc.com</a>
+        <p>
+          Fateh Carrier INC supports freight transportation and logistics
+          coordination with professional communication for brokers and
+          business partners.
+        </p>
+
+        <a class="button button-primary" href="#contact">
+          Contact Our Team
+        </a>
+
+        <a class="button button-outline" href="tel:+19294002187">
+          Call 929-400-2187
+        </a>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div>
+        <strong>MC 1807864</strong>
+        <span>Motor Carrier Number</span>
+      </div>
+      <div>
+        <strong>DOT 4551871</strong>
+        <span>USDOT Number</span>
+      </div>
+      <div>
+        <strong>Professional Service</strong>
+        <span>Freight Coordination</span>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-label">About Us</div>
+        <h2>A Transportation Partner You Can Reach</h2>
+
+        <p class="intro">
+          Fateh Carrier INC is a trucking and freight transportation
+          company owned by Satnam Singh. We coordinate business
+          communications with freight brokers and other business
+          contacts concerning load planning, pickup and delivery
+          scheduling, shipment updates, and transportation documents.
+        </p>
+      </div>
+    </section>
+
+    <section class="light" id="services">
+      <div class="container">
+        <div class="section-label">Our Services</div>
+        <h2>Transportation &amp; Logistics Coordination</h2>
+
+        <p class="intro">
+          Our business communications focus on coordinating freight
+          transportation and keeping relevant business contacts informed.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>🚛 Freight Transportation</h3>
+            <p>
+              Trucking and freight movement coordination based on
+              agreed shipment requirements.
             </p>
-        </section>
+          </article>
+
+          <article class="card">
+            <h3>📦 Load Coordination</h3>
+            <p>
+              Communication about load details, scheduling,
+              appointments, and required documents.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>📍 Shipment Updates</h3>
+            <p>
+              Relevant pickup, delivery, appointment, and status
+              updates for active transportation business.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="company">
+      <div class="container details">
+        <div>
+          <div class="section-label">Company Details</div>
+          <h2>Our Business Information</h2>
+
+          <ul class="details-list">
+            <li><strong>Company:</strong> Fateh Carrier INC</li>
+            <li><strong>Owner:</strong> Satnam Singh</li>
+            <li><strong>MC Number:</strong> 1807864</li>
+            <li><strong>USDOT Number:</strong> 4551871</li>
+            <li>
+              <strong>Address:</strong>
+              24 Koster BLVD APT 8A, Edison, NJ 08837
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-box" id="contact">
+          <h3>Contact Fateh Carrier INC</h3>
+
+          <p>
+            Contact us for business inquiries, load coordination,
+            and transportation-related questions.
+          </p>
+
+          <p>
+            <strong>Phone:</strong><br>
+            <a href="tel:+19294002187">929-400-2187</a>
+          </p>
+
+          <p>
+            <strong>Email:</strong><br>
+            <a href="mailto:fatehcarrier11@gmail.com">
+              fatehcarrier11@gmail.com
+            </a><br>
+            <a href="mailto:satnam@fatehcarrierinc.com">
+              satnam@fatehcarrierinc.com
+            </a>
+          </p>
+
+          <p>
+            <strong>Address:</strong><br>
+            24 Koster BLVD APT 8A<br>
+            Edison, NJ 08837
+          </p>
+
+          <div class="sms-note">
+            <strong>Business Text Messages</strong><br>
+            SMS is intended for transportation-related business
+            conversations, such as load inquiries, coordination,
+            and shipment updates. Message frequency varies.
+            Message and data rates may apply. Reply STOP to opt out
+            and HELP for assistance. Texting is not required to
+            purchase services.
+            <br><br>
+            Only leave the statement below if it accurately describes
+            how your business obtains text conversations:
+            Brokers and business contacts may initiate a business
+            text conversation by texting 929-400-2187.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="light">
+      <div class="container">
+        <div class="section-label">SMS Information</div>
+        <h2>Text Message Disclosures</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Message Frequency</h3>
+            <p>
+              Message frequency varies according to inquiries,
+              active loads, shipment updates, and other business
+              communications.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Rates and Opt-Out</h3>
+            <p>
+              Message and data rates may apply. Reply
+              <strong>STOP</strong> to opt out of SMS messages or
+              <strong>HELP</strong> for assistance.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Privacy</h3>
+            <p>
+              Mobile information and SMS consent are not shared with
+              third parties or affiliates for their marketing or
+              promotional purposes.
+              Read our <a href="privacy-policy.html">Privacy Policy</a>
+              and <a href="sms-terms.html">SMS Terms &amp; Conditions</a>.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>Fateh Carrier INC</strong><br>
+        MC 1807864 | USDOT 4551871<br>
+        &copy; 2026 Fateh Carrier INC
+      </div>
+
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="sms-terms.html">SMS Terms &amp; Conditions</a>
+        <a href="mailto:fatehcarrier11@gmail.com">Email Us</a>
+        <a href="tel:+19294002187">Call Us</a>
+      </div>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2026 Fateh Carrier INC. All Rights Reserved.</p>
-    </div>
+    <p class="small">
+      Please ensure all company, service, privacy, and messaging
+      statements accurately reflect your actual business practices.
+    </p>
+  </footer>
 
 </body>
 </html>
