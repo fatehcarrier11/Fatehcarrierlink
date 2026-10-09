@@ -13,44 +13,70 @@
             color: #333;
         }
         header {
-            background-color: #1a1a1a;
+            background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
             color: #fff;
-            padding: 20px 0;
+            padding: 120px 0;
             text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+        }
+        header h1 {
+            font-size: 55px;
+            margin: 0;
+        }
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
         }
         nav {
-            background-color: #333;
+            background-color: #1a1a1a;
             color: #fff;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 20px;
             font-weight: bold;
+        }
+        nav a:hover {
+            color: #ff4500;
         }
         .container {
             max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 30px auto;
+            padding: 30px;
             background: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
         section {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         h2 {
-            color: #1a1a1a;
+            color: #ff4500;
             border-bottom: 2px solid #ff4500;
-            padding-bottom: 5px;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            font-size: 18px;
         }
         .footer {
             background-color: #1a1a1a;
             color: #fff;
             text-align: center;
-            padding: 15px 0;
-            margin-top: 30px;
+            padding: 20px 0;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -58,7 +84,7 @@
 
     <header>
         <h1>Fateh Carrier INC</h1>
-        <p>Reliable Trucking & Logistics Services</p>
+        <p>Reliable Trucking & Logistics Services Across North America</p>
     </header>
 
     <nav>
